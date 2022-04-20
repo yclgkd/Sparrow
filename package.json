@@ -8,6 +8,7 @@
     "test": "jest --coverage",
     "test-live": "cross-env DEBUG_MODE=1 jest --coverage",
     "build": "rimraf -rf ./dist ./lib ./esm && rollup --config",
+    "ci": "run-s lint test build",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -28,12 +29,15 @@
     "jest-electron": "^0.1.12",
     "lint-staged": "^12.3.8",
     "mrm": "2",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix"]
+    "*.js": [
+      "eslint --fix"
+    ]
   }
 }
